@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+       'custom-heroTextGradient': 'linear-gradient(89.61deg, #4B3B73 -7.29%, #8567C3 32.92%, #E6D8FB 64.28%, #B89DEA 91.57%)',
+      },
     },
   },
   plugins: [],
