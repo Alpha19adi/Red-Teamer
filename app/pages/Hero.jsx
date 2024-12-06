@@ -8,7 +8,7 @@ import AnimatedText from "../components/AnimatedText";
 export default function Hero() {
   return (
     <div>
-      <div className="min-h-screen flex flex-col items-center justify-start w-screen bg-gradient-multi darker-grotesque ">
+      <div className="min-h-screen flex flex-col items-center justify-start bg-gradient-multi darker-grotesque ">
         <Navbar />
         <HeroSubtitleButton />
         <div className="flex flex-col items-center justify-center mt-2">
