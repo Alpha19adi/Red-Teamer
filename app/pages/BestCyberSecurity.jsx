@@ -31,7 +31,7 @@ const BestCyberSecurity = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className='min-h-screen bg-[#030014] py-10 pt-20'>
+    <div className='min-h-screen bg-[#030014] pt-20'>
       <div className='flex flex-col items-center'>
         <h1 className='text-5xl font-light text-white text-center pt-8'>We Offer Best Cyber Security Services</h1>
         <p className='text-[#918EA0] text-[16px] leading-[24px] font-medium text-center mt-10 md:w-[800px] w-[320px]'>
@@ -51,7 +51,7 @@ const BestCyberSecurity = () => {
           >
             {/* Gradient Overlay */}
             <div
-              className={`absolute inset-0 rounded-[32px]  bg-[radial-gradient(circle,_#6B21A8,_#000000)] 
+              className={`absolute inset-0 rounded-[24px]  bg-[radial-gradient(circle,_#6B21A8,_#000000)] 
                 transition-all duration-1000 
                 ${hoveredIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
             ></div>

@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 const navData = [
     "Home",
     "Features",
-    "Pricing",
+    "Services",
     "Pages",
     "Support"
 ];
