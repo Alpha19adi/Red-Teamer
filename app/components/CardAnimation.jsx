@@ -38,7 +38,7 @@ export default function CardAnimation({ props }) {
 
     scrollTriggerRef.current = ScrollTrigger.create({
       trigger: container,
-      start: "top -19%",
+      start: "top -12%",
       end: `+=${props.data.length * window.innerHeight}`,
       pin: true,
       scrub: 1,

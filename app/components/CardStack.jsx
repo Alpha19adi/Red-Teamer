@@ -59,7 +59,6 @@ export const CardStack = ({
     >
       <div className="hidden sm:block">
         {items.sort((a, b) => a.id - b.id).map((card, index) => {
-          // Hide the first card (id: 0) when the active tab is the last card (id: 4)
           const shouldHideCard = activeTab === 4 && index === 0;
 
           return (
@@ -70,7 +69,7 @@ export const CardStack = ({
                 transformOrigin: "top center",
                 background: card.bg,
                 zIndex: index * 10,
-                display: shouldHideCard ? 'none' : 'flex', // Hide the first card on the last tab
+                display: shouldHideCard ? 'none' : 'flex',
               }}
               initial={{
                 y: activeTab < prevTab && index === activeTab ? -500 : 500,
@@ -78,7 +77,7 @@ export const CardStack = ({
               }}
               animate={{
                 y: index <= activeTab 
-                  ? index * offset + (index === 0 ? -20 : 0)
+                  ? index * offset + (index === 0 ? -10 : 0)
                   : 500,
                 opacity: index <= activeTab 
                   ? (shouldHideCard ? 0 : 1) 
@@ -118,25 +117,6 @@ export const CardStack = ({
         })}
       </div>
 
-      {activeTab == 0 && (
-        <motion.div
-          key={`next-card-${activeTab}`}
-          className="absolute rounded-t-3xl shadow-lg border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05] flex-col justify-between items-center w-full hidden sm:flex"
-          style={{
-            background: `radial-gradient(circle, hsla(0, 0%, 2%, 1) 0%, hsla(238, 42%, 30%, 1) 70%)`,
-            backgroundSize: "cover, cover",
-            backgroundPosition: "center, center",
-            bottom: `-${0 + ((activeTab + 1) * 10)}px`,
-            height: "35px",
-            zIndex: (activeTab + 1) * 10,
-          }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            opacity: { duration: 0.6, ease: 'easeOut', delay: (Math.abs(activeTab - prevTab)) * (activeTab - prevTab > 0 ? (0.8) : (0.4)) },
-          }}
-        />
-      )}
 
       {/* Render as a carousel for mobile */}
       <div className="block sm:hidden">
