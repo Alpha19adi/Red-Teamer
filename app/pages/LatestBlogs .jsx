@@ -1,6 +1,5 @@
 import BlogCard from "../components/BlogCard";
 
-
 export const blogPosts = [
   {
     id: 1,
