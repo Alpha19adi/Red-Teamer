@@ -25,7 +25,7 @@ export default function Timeline({ props }) {
   }, []);
 
   return (
-    <div className="bg-[#030014] text-white w-full min-h-[597px] px-4 py-20 md:p-20 md:pb-80 flex flex-col justify-center items-center ">
+    <div className="bg-[#030014] text-white w-full min-h-[597px] px-4 py-20 md:p-20 md:pb-[360px] flex flex-col justify-center items-center ">
       <h1 className="text-white font-bold text-2xl md:text-4xl text-center pb-10 md:pb-40">The TimeLine</h1>
       <div className="w-full max-w-[1288px] flex flex-col gap-10">
         <div className={`

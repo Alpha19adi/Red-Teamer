@@ -4,7 +4,8 @@ import BestCyberSecurity from "./pages/BestCyberSecurity";
 import Services from "./pages/Services";
 import Services2 from "./pages/Services2";
 import FAQSection from "./components/FAQSection";
-import FIDOSection from "./components/Timeline";
+import Timeline from "./components/Timeline";
+import LatestBlogs from "./pages/LatestBlogs ";
 
 export default function Home() {
   const FIDOCard = {
@@ -34,12 +35,13 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Hero />
       <BestCyberSecurity />
       <Services />
       <Services2 />
-      <FIDOSection props={FIDOCard}/>
+      <Timeline props={FIDOCard}/>
+      <LatestBlogs />
       <FAQSection />
     </div>
   );

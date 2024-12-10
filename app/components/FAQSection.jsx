@@ -29,7 +29,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-24 bg-[#030014]">
+    <section className="py-[140px] bg-[#030014]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
         <div className="mb-16">
           <h2 className="text-4xl font-manrope text-center font-bold text-white leading-[3.25rem]">

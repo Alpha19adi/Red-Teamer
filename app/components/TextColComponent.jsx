@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TextColComponent({ props, index }) {
   return (
-    <div className={`${index%2===0 ?"flex flex-col gap-4 md:gap-8  items-center w-full text-center justify-center h-auto md:h-[165px]":` flex md:relative md:top-[400px] ${index===1 ?"md:right-4":"md:left-10"} flex-col  md:flex-col-reverse gap-4 md:gap-8 items-center w-full text-center justify-center h-auto md:h-[165px] `}
+    <div className={`${index%2===0 ?"flex flex-col gap-4 md:gap-8  items-center w-full text-center justify-center h-auto md:h-[165px]":` flex md:relative md:top-[400px] ${index===1 ?"md:right-4":"md:left-16"} flex-col  md:flex-col-reverse gap-4 md:gap-8 items-center w-full text-center justify-center h-auto md:h-[165px] `}
       
     `}>
       <img 
