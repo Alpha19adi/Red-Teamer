@@ -44,7 +44,7 @@ const BestCyberSecurity = () => {
           <div
             key={index}
             ref={(el) => cardRefs.current[index] = el}
-            className={`relative bg-[#1E1E1F] min-h-[320px]  rounded-3xl transition-all w-[320px] px-8 py-6 flex flex-col text-white text-center 
+            className={`relative min-h-[320px]  rounded-3xl transition-all w-[320px] px-8 py-6 flex flex-col text-white text-center 
               ${hoveredIndex === index ? 'scale-105' : ''}`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -52,7 +52,7 @@ const BestCyberSecurity = () => {
             {/* Gradient Overlay */}
             <div
               className={`absolute inset-0 rounded-[24px]  bg-[radial-gradient(circle,_#6B21A8,_#000000)] 
-                transition-all duration-1000 
+                transition-all duration-[900] 
                 ${hoveredIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
             ></div>
 

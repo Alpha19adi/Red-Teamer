@@ -4,8 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CardTab from "./CardTab";
 import { CardStack } from "./CardStack";
-// import SectionTopText from "@/components/general/SectionTopText";
-// import SectionHeaderText2 from "../general/SectionHeaderText2";
 
 // Register GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function CardAnimation({ props }) {
   const [activeTab, setActiveTab] = useState(0);
   const [prevTab, setPrevTab] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
   const cardStackRef = useRef(null);
   const scrollTriggerRef = useRef(null);
@@ -22,27 +21,54 @@ export default function CardAnimation({ props }) {
     if (id !== activeTab) {
       setPrevTab(activeTab);
       setActiveTab(id);
-      // console.log("Tab changed to", id);
     }
   }, [activeTab]);
 
+  // Check for mobile view
+  useEffect(() => {
+    const checkMobileView = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    // Check initial load
+    checkMobileView();
+
+    // Add event listener for resize
+    window.addEventListener('resize', checkMobileView);
+
+    // Cleanup listener
+    return () => {
+      window.removeEventListener('resize', checkMobileView);
+    };
+  }, []);
+
   // GSAP ScrollTrigger setup
   useEffect(() => {
+    // If mobile, don't set up ScrollTrigger
+    if (isMobile) {
+      // Kill existing ScrollTrigger if it exists
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+        scrollTriggerRef.current = null;
+      }
+      return;
+    }
+
     const container = containerRef.current;
 
     if (!container) return;
 
+    // Kill existing ScrollTrigger
     if (scrollTriggerRef.current) {
       scrollTriggerRef.current.kill();
     }
 
     scrollTriggerRef.current = ScrollTrigger.create({
       trigger: container,
-      start: "top -12%",
+      start: "top -7%",
       end: `+=${props.data.length * window.innerHeight}`,
       pin: true,
       scrub: 1,
-      // markers: true,
       snapTo: 1 / (props.data.length - 1),
       onUpdate: (self) => {
         const progress = self.progress;
@@ -62,22 +88,30 @@ export default function CardAnimation({ props }) {
         scrollTriggerRef.current.kill();
       }
     };
-  }, [props.data, activeTab, handleTabChange]);
+  }, [props.data, activeTab, handleTabChange, isMobile]);
 
   return (
-    <div ref={containerRef} className="min-h-screen w-full overflow-hidden ">
+    <div ref={containerRef} className="min-h-screen w-full overflow-hidden">
       <div className="flex flex-col gap-4 lg:pb-[40px] lg:px-[80px] px-[20px] h-full">
         <div className="max-w-1000 flex justify-center max-md:w-full">
           <div className="flex flex-col w-full justify-center items-center gap-[16px]">
+            {/* Optional section headers can be uncommented if needed */}
             {/* <SectionTopText text={props.heading} />
             <SectionHeaderText2 text={props.subheading} /> */}
           </div>
         </div>
         <div className="mb-20 md:mb-8 lg:mt-[48px]">
-          <CardTab setActiveTabInd={handleTabChange} activeTab={activeTab} />
+          <CardTab 
+            setActiveTabInd={handleTabChange} 
+            activeTab={activeTab} 
+          />
         </div>
-        <div ref={cardStackRef} className="flex justify-center max-md:mx-4 ">
-          <CardStack items={props.data} activeTab={activeTab} prevTab={prevTab} />
+        <div ref={cardStackRef} className="flex justify-center max-md:mx-4">
+          <CardStack 
+            items={props.data} 
+            activeTab={activeTab} 
+            prevTab={prevTab} 
+          />
         </div>
       </div>
     </div>

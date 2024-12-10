@@ -60,7 +60,7 @@ const ServiceComponent = () => {
     return (
         <div className=''>
             <section id="pricing" className="relative z-20 overflow-hidden pt-44">
-                <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
+                <div className="max-w-[1170px] mx-auto md:px-4 sm:px-8 xl:px-0">
                     {/* Background elements */}
                     <div className="relative top-[72px]">
                         <div className="absolute -z-10 pointer-events-none inset-0 overflow-hidden -my-[220px]">
@@ -102,7 +102,7 @@ const ServiceComponent = () => {
                         <h2 className="text-white mb-[18px] text-2xl font-extrabold sm:text-4xl md:text-[44px]">
                             Defensive services
                         </h2>
-                        <p className="max-w-[714px] mx-auto font-medium mt-10 text-[#9182A0]">
+                        <p className="md:max-w-[714px] max-w-[400px] mx-auto font-medium mt-10 text-[#9182A0]">
                             A defensive security involves implementing proactive measures to
                             protect digital assets, infrastructure, and data from cyber threats
                             and attacks. This includes strategies such as risk management,

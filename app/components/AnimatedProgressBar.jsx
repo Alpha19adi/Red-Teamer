@@ -4,9 +4,31 @@ import React, { useEffect, useState } from "react";
 
 const AnimatedProgressBar = () => {
   const [progress, setProgress] = useState(0);
-  const [isPaused, setIsPaused] = useState(false); // State to control the pause
+  const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check mobile view
+    const checkMobileView = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    checkMobileView();
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobileView);
+
+    // Cleanup listener
+    return () => {
+      window.removeEventListener('resize', checkMobileView);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Don't run animation on mobile
+    if (isMobile) return;
+
     const interval = setInterval(() => {
       if (!isPaused) {
         setProgress((prev) => {
@@ -21,13 +43,16 @@ const AnimatedProgressBar = () => {
     }, 100);
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, isMobile]);
+
+  // If mobile, return null or a simplified version
+  if (isMobile) return null;
 
   return (
-    <div className="w-full max-w-[1088px] left-24 h-8 relative">
+    <div className="w-full max-w-[1088px] md:px-20 px-4 h-8 left-24 relative">
       {/* Base line */}
       <div
-        className="absolute top-1/2 left w-full h-0.5 -translate-y-1/2"
+        className="absolute top-1/2 left-0 right-0 h-0.5 -translate-y-1/2"
         style={{
           backgroundImage:
             "repeating-linear-gradient(90deg, #1D2E61 0, #1D2E61 10px, transparent 10px, transparent 20px)",
@@ -50,11 +75,14 @@ const AnimatedProgressBar = () => {
       {[0, 32, 65, 100].map((position) => (
         <div
           key={position}
-          className={`absolute  top-1/2 transition-all -translate-y-1/2 h-8 w-8 rounded-full ${
-            progress >= position
+          className={`
+            absolute top-1/2 transition-all -translate-y-1/2 
+            h-6 w-6 md:h-8 md:w-8 rounded-full 
+            ${progress >= position
               ? "bg-[#263964fd]"
               : "bg-[#dfe5f8]"
-          }`}
+            }
+          `}
           style={{
             left: `calc(${position}% - ${position === 100 ? "16px" : "0px"})`,
           }}

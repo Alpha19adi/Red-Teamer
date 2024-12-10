@@ -1,7 +1,6 @@
 import React from 'react'
 import HeroSubtitleButton from './Buttons/HeroSubtitleButton'
 import CardAnimation from './CardAnimation'
-import CardAnimation2 from './CardAnimation2'
 
 
 const ServiceComponent2 = () => {
@@ -61,7 +60,7 @@ const ServiceComponent2 = () => {
     return (
         <div className=''>
             <section id="pricing" className="relative z-20 overflow-hidden pt-44">
-                <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
+                <div className="max-w-[1170px] mx-auto md:px-4 sm:px-8 xl:px-0">
                     {/* Background elements */}
                     <div className="relative top-[72px]">
                         <div className="absolute -z-10 pointer-events-none inset-0 overflow-hidden -my-[220px]">
@@ -103,7 +102,7 @@ const ServiceComponent2 = () => {
                         <h2 className="text-white mb-[18px] text-2xl font-extrabold sm:text-4xl md:text-[44px]">
                             Offensive services
                         </h2>
-                        <p className="max-w-[714px] mx-auto font-medium mt-10 text-[#9182A0]">
+                        <p className="md:max-w-[714px] max-w-[400px]  mx-auto font-medium mt-10 text-[#9182A0]">
                             A offensive security involves implementing proactive measures to
                             protect digital assets, infrastructure, and data from cyber threats
                             and attacks. This includes strategies such as risk management,
@@ -113,7 +112,7 @@ const ServiceComponent2 = () => {
                     </div>
                 </div>
             </section>
-            <CardAnimation2 props={projectsData2}/>
+            <CardAnimation props={projectsData2}/>
         </div>
     )
 }

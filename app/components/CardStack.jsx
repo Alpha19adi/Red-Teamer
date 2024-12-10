@@ -126,7 +126,7 @@ export const CardStack = ({
             initial={{ x: prevIndex < currentIndex ? 300 : -300, y: 0, opacity: 0 }}
             animate={{ x: 0, y: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="relative rounded-3xl shadow-lg border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between w-full box-border min-h-[800px]"
+            className="relative rounded-3xl shadow-lg border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between w-full box-border h-[700px]   md:min-h-[800px]"
             style={{
               background: cards[currentIndex].bg,
             }}

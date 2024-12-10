@@ -4,7 +4,7 @@ import ServiceComponent2 from '../components/ServiceComponent2'
 
 const Services = () => {
   return (
-    <div className='bg-[#030014] h-[490vh]'>
+    <div className='bg-[#030014]  md:h-[490vh]'>
         <ServiceComponent />
     </div>
   )

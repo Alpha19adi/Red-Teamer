@@ -4,7 +4,7 @@ import BestCyberSecurity from "./pages/BestCyberSecurity";
 import Services from "./pages/Services";
 import Services2 from "./pages/Services2";
 import FAQSection from "./components/FAQSection";
-import FIDOSection from "./components/FIDOSection";
+import FIDOSection from "./components/Timeline";
 
 export default function Home() {
   const FIDOCard = {
