@@ -3,7 +3,7 @@ import { CalendarIcon, UserIcon } from 'lucide-react';
 
 const BlogCard = ({ post }) => {
   return (
-    <div className="rounded-3xl group flex flex-col shadow-md w-[400px] mx-auto transition-all duration-300 hover:shadow-xl ">
+    <div className="rounded-3xl group flex flex-col px-6 md:px-0 shadow-md w-[400px] mx-auto transition-all duration-300 hover:shadow-xl ">
       <div className="relative h-48 mb-4 overflow-hidden">
         <Image 
           src={post.imageUrl} 

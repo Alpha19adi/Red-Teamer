@@ -29,7 +29,7 @@ export const blogPosts = [
 
 const LatestBlogs = () => {
   return (
-    <section className="bg-dark py-10 md:py-20 px-4">
+    <section className="bg-dark py-10 md:py-20">
       <div className="container mx-auto max-w-screen-xl">
         <div className="text-center mb-10 md:mb-20">
           <h2 className="text-white text-2xl md:text-5xl font-semibold mb-4">
