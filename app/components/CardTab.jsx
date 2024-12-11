@@ -8,14 +8,14 @@ let tabs = [
 
 export default function CardTab({ setActiveTabInd, activeTab }) {
   return (
-    <div className="justify-center items-center hidden sm:flex md:flex">
+    <div className="justify-center items-center hidden sm:flex md:flex hover:cursor-none">
       <div className="flex gap-[32px]">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTabInd(tab.id)}
             className={`${
-              activeTab === tab.id ? "" : "hover:text-white/60"
+              activeTab === tab.id ? "" : "hover:text-white/60 hover:cursor-none"
             } relative rounded-xl px-[1.13rem] py-3 text-[16px] leading-[16px] font-normal bg-zinc-800 text-white outline-sky-400 transition focus-visible:outline-2 h-[48px]`}
             style={{
               WebkitTapHighlightColor: "transparent",

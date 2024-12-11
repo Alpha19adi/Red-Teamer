@@ -109,7 +109,7 @@ const headingRef = useRef(null);
 
     return (
       <div className="min-h-screen bg-dark w-full">
-        <Navbar />
+        {/* <Navbar /> */}
           <div className="flex p-10 text-center md:p-20 md:gap-y-20 gap-y-10 items-center text-white flex-col">
             <h1 
               ref={headingRef}
@@ -137,12 +137,12 @@ const headingRef = useRef(null);
                     <div className="p-4">
                       <a
                         href={`/blog/${post.id}`}
-                        className="text-white text-lg font-bold line-clamp-2 hover:text-gray-300 transition-colors"
+                        className="text-white text-lg text-start font-bold line-clamp-2 hover:text-gray-300 transition-colors"
                       >
                         {post.title}
                       </a>
     
-                      <p className="text-gray-400 text-sm mt-2 line-clamp-3">
+                      <p className="text-gray-400 text-start text-sm mt-2 line-clamp-3">
                         {post.description.length > 150 
                           ? post.description.substring(0, 150) + '...' 
                           : post.description}

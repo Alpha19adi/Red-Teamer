@@ -6,6 +6,7 @@ import Services2 from "./pages/Services2";
 import FAQSection from "./components/FAQSection";
 import Timeline from "./components/Timeline";
 import LatestBlogs from "./pages/LatestBlogs ";
+import Cursor from "./components/Cursor";
 
 export default function Home() {
   const FIDOCard = {
@@ -35,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden cursor-none">
       <Hero />
       <BestCyberSecurity />
       <Services />

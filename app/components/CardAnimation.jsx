@@ -100,7 +100,7 @@ export default function CardAnimation({ props }) {
             <SectionHeaderText2 text={props.subheading} /> */}
           </div>
         </div>
-        <div className="mb-20 md:mb-8 lg:mt-[48px]">
+        <div className="mb-20  md:mb-8 lg:mt-[48px]">
           <CardTab 
             setActiveTabInd={handleTabChange} 
             activeTab={activeTab} 

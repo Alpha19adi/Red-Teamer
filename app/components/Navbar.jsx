@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const navData = ["Home", "Features", "Services", "Blogs"];
+const navData = ["Home", "Features", "Services", "Blogs","Process"];
 
 const Navbar = () => {
   const router = useRouter();
@@ -19,6 +19,10 @@ const Navbar = () => {
 
     if (item === "Blogs") {
       router.push('/blogs');
+      return;
+    }
+    if (item === "Process") {
+      router.push('/process');
       return;
     }
 
@@ -74,7 +78,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="w-full text-white px-4 py-2">
+    <nav className="w-full text-white px-4 py-2 ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="relative w-[350px] h-[90px]">
@@ -92,7 +96,7 @@ const Navbar = () => {
           {navData.map((item) => (
             <button
               key={item}
-              className={`relative text-gray-300 text-sm md:text-md py-1.5 px-4 border font-medium border-transparent hover:underline ${
+              className={`relative text-gray-300 text-sm md:text-md py-1.5 px-4 border font-medium border-transparent hover:cursor-none  ${
                 activeNav === item ? "nav-gradient hover:underline" : ""
               }`}
               onClick={() => handleNavClick(item)}
@@ -104,7 +108,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <div
-          className="md:hidden cursor-pointer"
+          className="md:hidden"
           onClick={() => setIsMobileMenuOpen(true)}
         >
           <AlignJustify />
@@ -116,7 +120,7 @@ const Navbar = () => {
           className="fixed top-0 right-0 w-64 h-full bg-black/90 z-50 flex-col pt-16 hidden"
         >
           <div
-            className="absolute top-4 left-4 cursor-pointer"
+            className="absolute top-4 left-4"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <X color="white" size={30} />

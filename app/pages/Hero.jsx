@@ -18,7 +18,7 @@ export default function Hero() {
       </span></p>
           <p className="text-[#918EA0] mt-8 text-center w-[360px] text-lg md:w-[450px] hover:underline transition-all">While any run-of-the-mill IT company will claim to offer you competent IT solutions, as long as it no longer does, we at VAPT Company are globally renowned for our work and believe in offering result-oriented IT facilities.</p>
         </div>
-        <button className="hero-button-gradient mt-10 inline-flex rounded-lg py-3 px-7 text-white font-medium ease-in duration-300 hover:opacity-80">Start Your Free Security Assessment
+        <button className="hero-button-gradient hover:cursor-none mt-10 inline-flex rounded-lg py-3 px-7 text-white font-medium ease-in duration-300 hover:opacity-80">Start Your Free Security Assessment
         </button>
         <div className="mt-16  overflow-hidden">
           <img src="hero.svg" alt="" />
