@@ -42,7 +42,7 @@ export default function Home() {
       <Services2 />
       <Timeline props={FIDOCard}/>
       <LatestBlogs />
-      <FAQSection />
+      <FAQSection  />
     </div>
   );
 }

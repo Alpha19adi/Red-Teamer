@@ -7,7 +7,7 @@ import AnimatedText from "../components/AnimatedText";
 
 export default function Hero() {
   return (
-    <div>
+    <div id="Home">
       <div className=" flex flex-col items-center justify-start bg-gradient-multi darker-grotesque ">
         <Navbar />
         <HeroSubtitleButton />
@@ -20,9 +20,9 @@ export default function Hero() {
         </div>
         <button className="hero-button-gradient mt-10 inline-flex rounded-lg py-3 px-7 text-white font-medium ease-in duration-300 hover:opacity-80">Start Your Free Security Assessment
         </button>
-        {/* <div className="mt-16  overflow-hidden">
+        <div className="mt-16  overflow-hidden">
           <img src="hero.svg" alt="" />
-        </div> */}
+        </div>
       </div>
     </div>
   );
