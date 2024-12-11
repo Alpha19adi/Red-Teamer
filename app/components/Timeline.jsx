@@ -32,7 +32,7 @@ export default function Timeline({ props }) {
           flex flex-col md:flex-row 
           justify-center md:justify-between 
           items-center gap-10 md:gap-4 
-          pb-10 md:pb-20
+          pb-10 md:pb-10
         `}>
           {props.card.map((card, index) => (
             <TextColComponent key={index} props={card} index={index} />

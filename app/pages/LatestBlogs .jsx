@@ -35,7 +35,7 @@ const LatestBlogs = () => {
           <h2 className="text-white text-2xl md:text-5xl font-semibold mb-4">
             Latest Blogs & News
           </h2>
-          <p className="max-w-2xl mx-auto text-base md:text-lg font-medium text-gray-300">
+          <p className="max-w-2xl mx-auto text-base md:text-lg font-medium text-gray-300 px-14 md:px-0">
             Our AI writing tool is designed to empower you with exceptional
             writing capabilities, making the writing process more efficient,
             accurate, and enjoyable.

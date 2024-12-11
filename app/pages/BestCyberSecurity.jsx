@@ -33,8 +33,8 @@ const BestCyberSecurity = () => {
   return (
     <div id='Features' className='min-h-screen bg-[#030014] pt-20'>
       <div className='flex flex-col items-center'>
-        <h1 className='text-5xl font-light text-white text-center pt-8'>We Offer Best Cyber Security Services</h1>
-        <p className='text-[#918EA0] text-[16px] leading-[24px] font-medium text-center mt-10 md:w-[800px] w-[320px]'>
+        <h1 className='text-4xl md:text-5xl px-10 font-light text-white text-center pt-8'>We Offer Best Cyber Security Services</h1>
+        <p className='text-[#918EA0] text-[14px] md:text-[16px] leading-[24px] font-medium text-center mt-10 md:w-[800px] w-[320px]'>
           We believe in making today more secure than yesterday. With our resilient cybersecurity programs, you can avert maximum attacks and recover promptly from any that succeeded. Integrate cybersecurity to your organization's very core with our services.
         </p>
       </div>
@@ -63,8 +63,8 @@ const BestCyberSecurity = () => {
               className='mt-[-70px] mb-4 flex items-center z-10 justify-center mx-auto'
             />
             <div className='flex flex-col gap-y-8 mt-6 z-10'>
-              <h1 className='font-bold text-2xl '>{item.title}</h1>
-              <p className='font-semibold text-sm'>{item.description}</p>
+              <h1 className='font-semi  text-2xl '>{item.title}</h1>
+              <p className='font-normal text-sm'>{item.description}</p>
             </div>
           </div>
         ))}

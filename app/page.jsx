@@ -28,7 +28,7 @@ export default function Home() {
       },
       {
         "src":"/timeline1.svg",
-        "heading": "Reporting",
+        "heading": "Reporting Timely",
         "description": "Send passkey related alerts via SMS and email."
       }
     ]
