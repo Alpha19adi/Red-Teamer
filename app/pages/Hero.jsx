@@ -2,7 +2,8 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import HeroSubtitleButton from "../components/Buttons/HeroSubtitleButton";
 import AnimatedText from "../components/AnimatedText";
-import GlobeDemo form "../components/GlobeDemo";
+import {Globe} from "../components/ui/globe"
+// import GlobeDemo form "../components/GlobeDemo";
 
 export default function Hero() {
   return (
@@ -33,8 +34,8 @@ export default function Hero() {
           </div>
           
           {/* Right Column - Image */}
-          <div className="mt-16 md:mt-0 md:w-1/2 flex justify-center md:justify-end">
-            <GLobeDemo/>
+          <div className="mt-16 md:mt-0 md:w-1/2 flex justify-center md:justify-end relative">
+           <Globe  />
           </div>
         </div>
       </div>
