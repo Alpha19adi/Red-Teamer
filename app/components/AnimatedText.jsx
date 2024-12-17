@@ -10,7 +10,7 @@ const AnimatedText = ({ }) => {
 
   const headings= [
     'Sensitive Data',
-    'Secure Networks',
+    'Networks',
     'Compliance',
     'Vulnerabilities',
   ]
@@ -61,7 +61,7 @@ const AnimatedText = ({ }) => {
         <span
           key={idx}
           ref={(el) => (headingsRef.current[idx] = el)}
-          className="text-[36px] leading-[36px] md:text-[80px] md:leading-[50px] font-[500] text-transparent flex justify-center items-center bg-clip-text bg-custom-heroTextGradient absolute transition-transform duration-2000 ease-in h-full"
+          className="text-[32px] leading-[50px]  md:text-[80px] md:leading-[50px] font-[500] text-transparent flex justify-center items-center bg-clip-text bg-custom-heroTextGradient absolute transition-transform duration-2000 ease-in h-full"
           style={{ top: idx === 0 ? '0%' : '100%' }} 
         >
           {heading}

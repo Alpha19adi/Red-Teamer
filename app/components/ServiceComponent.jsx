@@ -59,7 +59,7 @@ const ServiceComponent = () => {
 
     return (
         <div>
-            <section id="pricing" className="relative z-20 overflow-hidden pt-44">
+            <section id="pricing" className="relative z-20 overflow-hidden pt-36">
                 <div className="max-w-[1170px] mx-auto md:px-4 sm:px-8">
                     {/* Background elements */}
                     <div className="relative top-[72px]">

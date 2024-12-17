@@ -36,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <div className="overflow-hidden cursor-none">
+    <div className="overflow-hidden md:cursor-none">
       <Hero />
       <BestCyberSecurity />
       <Services />
