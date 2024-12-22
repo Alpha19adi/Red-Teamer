@@ -96,7 +96,7 @@ const Navbar = () => {
           {navData.map((item) => (
             <button
               key={item}
-              className={`relative text-gray-300 text-sm md:text-md py-1.5 px-4 border font-medium border-transparent hover:cursor-none  ${
+              className={`relative text-gray-300 text-sm md:text-md py-1.5 px-4 border font-medium border-transparent   ${
                 activeNav === item ? "nav-gradient hover:underline" : ""
               }`}
               onClick={() => handleNavClick(item)}

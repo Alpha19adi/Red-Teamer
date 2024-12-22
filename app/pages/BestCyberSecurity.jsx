@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 
 const cyberSecurity = [
     {
-        src: "/cyberDiv.png", // Added leading slash
+        src: "/cyberDiv.png", 
         title: 'Web Penetration Testing',
         description: "Identifies vulnerabilities in web applications to enhance security defenses.",
     },

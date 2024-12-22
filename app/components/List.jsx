@@ -18,7 +18,7 @@ export const ListItem = ({ title, children }) => {
       <FadeIn>
         <Border className="pt-10 group-first:pt-0 group-first:before:hidden group-first:after:hidden">
           {title && (
-            <strong className="font-semibold text-white">{`${title}. `}</strong>
+            <strong className="font-semibold ">{`${title}. `}</strong>
           )}
           {children}
         </Border>

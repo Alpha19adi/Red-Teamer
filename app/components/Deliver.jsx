@@ -10,32 +10,32 @@ const Deliver = () => {
         <p>
           About halfway through the Build phase, we push each project out by 6
           weeks due to a change in{" "}
-          <strong className="font-semibold text-white">
+          <strong className="font-semibold ">
             requirements
           </strong>
           . This allows us to increase the budget a final time before launch.
         </p>
         <p>
           Despite largely using pre-built components, most of the{" "}
-          <strong className="font-semibold text-white">progress</strong>{" "}
+          <strong className="font-semibold ">progress</strong>{" "}
           on each project takes place in the final 24 hours. The development
           time allocated to each client is actually spent making augmented
           reality demos that go viral on Twitter.
         </p>
         <p>
           We ensure that the main pages of the site are{" "}
-          <strong className="font-semibold text-white">
+          <strong className="font-semibold ">
             fully functional
           </strong>{" "}
           at launch — the auxiliary pages will, of course, be lorem ipusm shells
           which get updated as part of our exorbitant{" "}
-          <strong className="font-semibold text-white">
+          <strong className="font-semibold ">
             maintenance
           </strong>{" "}
           retainer.
         </p>
       </div>
-      <h3 className="mt-12 font-display text-base font-semibold text-white">
+      <h3 className="mt-12 font-display text-base font-semibold ">
         Included in this phase
       </h3>
       <List>

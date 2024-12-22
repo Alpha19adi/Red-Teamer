@@ -2,6 +2,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Cursor from "./components/Cursor";
 
+
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -24,7 +26,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="hidden md:block">
         <Cursor />
+        </div>
         {children}
       </body>
     </html>

@@ -42,12 +42,6 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
   const pointerInteractionMovement = useRef(0);
   const [r, setR] = useState(0);
 
-  const updatePointerInteraction = (value) => {
-    pointerInteracting.current = value;
-    if (canvasRef.current) {
-      canvasRef.current.style.cursor = value ? "grabbing" : "grab";
-    }
-  };
 
   const updateMovement = (clientX) => {
     if (pointerInteracting.current !== null) {
@@ -100,17 +94,6 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
           "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
         ref={canvasRef}
-        onPointerDown={(e) =>
-          updatePointerInteraction(
-            e.clientX - pointerInteractionMovement.current
-          )
-        }
-        onPointerUp={() => updatePointerInteraction(null)}
-        onPointerOut={() => updatePointerInteraction(null)}
-        onMouseMove={(e) => updateMovement(e.clientX)}
-        onTouchMove={(e) =>
-          e.touches[0] && updateMovement(e.touches[0].clientX)
-        }
       />
     </div>
   );
