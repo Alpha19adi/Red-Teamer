@@ -1,4 +1,4 @@
-import { navigation } from "@/constants";
+import { navigation } from "../constants/index";
 import Link from "next/link";
 
 const FooterNavigation = () => {
@@ -10,12 +10,12 @@ const FooterNavigation = () => {
             <div className="font-display text-sm font-semibold tracking-wider text-white">
               {item.title}
             </div>
-            <ul role="list" className="mt-4 text-sm text-neutral-700">
+            <ul role="list" className="mt-4 text-sm text-white ">
               {item.links.map((link) => (
                 <li key={link.title} className="mt-4">
                   <Link
                     href={link.href}
-                    className="transition hover:text-white"
+                    className="transition-all hover:text-base"
                   >
                     {link.title}
                   </Link>

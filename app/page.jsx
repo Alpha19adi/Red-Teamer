@@ -7,6 +7,7 @@ import FAQSection from "./components/FAQSection";
 import Timeline from "./components/Timeline";
 import LatestBlogs from "./pages/LatestBlogs ";
 import Cursor from "./components/Cursor";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const FIDOCard = {
@@ -36,7 +37,7 @@ export default function Home() {
   }
 
   return (
-    <div className="overflow-hidden md:cursor-none">
+    <div className="overflow-hidden md:cursor-none bg-dark">
       <Hero />
       <BestCyberSecurity />
       <Services />
@@ -44,6 +45,7 @@ export default function Home() {
       <Timeline props={FIDOCard}/>
       <LatestBlogs />
       <FAQSection  />
+      <Footer/>
     </div>
   );
 }
