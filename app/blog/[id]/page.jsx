@@ -1,18 +1,9 @@
 import { CalendarIcon, UserIcon } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react'
+import { blogPosts } from '../../constants/index';
 
 const Page = async ({ params }) => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Revolution in Content Creation and Communication",
-      description: "Second, when you have become capable of watching and witnessing your body and its activities, then you can take the second step: watch the activities of your mind – thoughts, dreams, imagination.\n\nJust remain a witness, as if you are standing by the side of the road and a procession of thoughts is passing on the road. You are not part of it.\n\nYou are just a mirror reflecting, without any judgement – because the mirror has no judgement.",
-      author: "Alex Demo",
-      date: "25 Mar, 2025",
-      imageUrl: "/hero.svg"
-    },
-  ];
 
   const { id } = await params;
   const blog = blogPosts.find((post) => post.id === parseInt(id));

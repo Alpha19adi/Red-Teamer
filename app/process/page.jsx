@@ -4,10 +4,13 @@ import Discover from "../components/Discover";
 import Build from "../components/Build";
 import Deliver from "../components/Deliver";
 import Values from "../components/Values";
+import Navbar from "../components/Navbar";
 
 const ProcessPage = () => {
   return (
-    <div className="bg-dark overflow-hidden pt-20">
+    <div className="bg-dark overflow-hidden">
+      <Navbar/>
+      <div className="pt-20">  
       <PageIntro  title="How we work">
         <p>
           We believe in efficiency and maximizing our resources to provide the
@@ -15,6 +18,7 @@ const ProcessPage = () => {
           the same five projects we’ve been developing for the past decade.
         </p>
       </PageIntro>
+      </div>
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
         {/* Discover */}
         <Discover />

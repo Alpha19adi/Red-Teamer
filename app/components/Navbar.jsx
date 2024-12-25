@@ -2,13 +2,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AlignJustify, X } from "lucide-react";
 import { gsap } from "gsap";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 
-const navData = ["Home", "Features", "Services", "Blogs","Process"];
+const navData = ["Home", "Features", "Services", "Blogs", "Process"];
 
 const Navbar = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const [activeNav, setActiveNav] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
@@ -17,6 +18,7 @@ const Navbar = () => {
     setActiveNav(item);
     setIsMobileMenuOpen(false);
 
+    // Special cases for direct page navigation
     if (item === "Blogs") {
       router.push('/blogs');
       return;
@@ -26,33 +28,52 @@ const Navbar = () => {
       return;
     }
 
-    if (item === "Home") {
-        // Check if we're already on the home page
-        if (router.pathname !== '/') {
-            router.push('/');  // Navigate to home if we're on a different page
-        } else {
-            // If we're already on home, just scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+    // If we're not on the landing page and trying to navigate to a section
+    if (pathname !== '/' && ['Home', 'Features', 'Services'].includes(item)) {
+      router.push('/');
+      // We need to wait for the navigation to complete before scrolling
+      setTimeout(() => {
+        const section = document.getElementById(item);
+        if (section) {
+          const offset = section.offsetTop;
+          const customOffset = {
+            Home: 0,
+            Features: offset,
+            Services: offset + 100,
+          };
+          
+          window.scrollTo({
+            top: customOffset[item],
+            behavior: "smooth",
+          });
         }
-        return;
+      }, 100); // Small delay to ensure the page has loaded
+      return;
     }
 
-    const section = document.getElementById(item);
-    if (section) {
-      const offset = section.offsetTop;
-      const customOffset = {
-        Home: offset,
-        Features: offset,
-        Services: offset + 100,
-      };
+    // If we're already on the landing page
+    if (pathname === '/') {
+      if (item === 'Home') {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        return;
+      }
 
-      window.scrollTo({
-        top: customOffset[item],
-        behavior: "smooth",
-      });
+      const section = document.getElementById(item);
+      if (section) {
+        const offset = section.offsetTop;
+        const customOffset = {
+          Features: offset,
+          Services: offset + 100,
+        };
+
+        window.scrollTo({
+          top: customOffset[item],
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -86,8 +107,9 @@ const Navbar = () => {
             src="/Logo.png"
             alt="Logo"
             fill
-            className="object-contain"
+            className="object-contain "
             priority
+            onClick={() => handleNavClick("Home")}
           />
         </div>
 
@@ -108,7 +130,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <div
-          className="md:hidden"
+          className="md:hidden cursor-pointer"
           onClick={() => setIsMobileMenuOpen(true)}
         >
           <AlignJustify />
@@ -120,7 +142,7 @@ const Navbar = () => {
           className="fixed top-0 right-0 w-64 h-full bg-black/90 z-50 flex-col pt-16 hidden"
         >
           <div
-            className="absolute top-4 left-4"
+            className="absolute top-4 left-4 cursor-pointer"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <X color="white" size={30} />

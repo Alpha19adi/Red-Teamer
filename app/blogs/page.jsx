@@ -5,73 +5,73 @@ import Image from 'next/image';
 import { CalendarIcon, UserIcon } from 'lucide-react';
 import gsap from 'gsap';
 import Navbar from '../components/Navbar';
+import { blogPosts } from '../constants';
 
- const blogPosts = [
-    {
-        id: 1,
-        title: "Revolution in Content Creation and Communication",
-        description: "Second, when you have become capable of watching and witnessing your body and its activities...",
-        author: "Alex Demo",
-        date: "25 Mar, 2025",
-        imageUrl: "/hero.svg"
-    },
-    {
-        id: 2,
-        title: "AI-Powered Writing Tools Transform Content Strategy",
-        description: "Explore how advanced AI technologies are reshaping the way we create, edit, and distribute content...",
-        author: "Sarah Johnson",
-        date: "15 Apr, 2025",
-        imageUrl: "/hero.svg"
-    },
-    {
-        id: 3,
-        title: "Future of Digital Communication in the Age of AI",
-        description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
-        author: "Mike Rodriguez",
-        date: "10 May, 2025",
-        imageUrl: "/hero.svg"
-    },
-    {
-        id: 4,
-        title: "Future of Digital Communication in the Age of AI",
-        description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
-        author: "Mike Rodriguez",
-        date: "10 May, 2025",
-        imageUrl: "/hero.svg"
-    },
-    {
-        id: 5,
-        title: "Future of Digital Communication in the Age of AI",
-        description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
-        author: "Mike Rodriguez",
-        date: "10 May, 2025",
-        imageUrl: "/hero.svg"
-    },
-    {
-        id: 6,
-        title: "Future of Digital Communication in the Age of AI",
-        description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
-        author: "Mike Rodriguez",
-        date: "10 May, 2025",
-        imageUrl: "/hero.svg"
-    },
-    {
-        id: 7,
-        title: "Future of Digital Communication in the Age of AI",
-        description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
-        author: "Mike Rodriguez",
-        date: "10 May, 2025",
-        imageUrl: "/hero.svg"
-    },
-    {
-        id: 8,
-        title: "Future of Digital Communication in the Age of AI",
-        description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
-        author: "Mike Rodriguez",
-        date: "10 May, 2025",
-        imageUrl: "/hero.svg"
-    },
-];
+//     {
+//         id: 1,
+//         title: "Revolution in Content Creation and Communication",
+//         description: "Second, when you have become capable of watching and witnessing your body and its activities...",
+//         author: "Alex Demo",
+//         date: "25 Mar, 2025",
+//         imageUrl: "/hero.svg"
+//     },
+//     {
+//         id: 2,
+//         title: "AI-Powered Writing Tools Transform Content Strategy",
+//         description: "Explore how advanced AI technologies are reshaping the way we create, edit, and distribute content...",
+//         author: "Sarah Johnson",
+//         date: "15 Apr, 2025",
+//         imageUrl: "/hero.svg"
+//     },
+//     {
+//         id: 3,
+//         title: "Future of Digital Communication in the Age of AI",
+//         description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
+//         author: "Mike Rodriguez",
+//         date: "10 May, 2025",
+//         imageUrl: "/hero.svg"
+//     },
+//     {
+//         id: 4,
+//         title: "Future of Digital Communication in the Age of AI",
+//         description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
+//         author: "Mike Rodriguez",
+//         date: "10 May, 2025",
+//         imageUrl: "/hero.svg"
+//     },
+//     {
+//         id: 5,
+//         title: "Future of Digital Communication in the Age of AI",
+//         description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
+//         author: "Mike Rodriguez",
+//         date: "10 May, 2025",
+//         imageUrl: "/hero.svg"
+//     },
+//     {
+//         id: 6,
+//         title: "Future of Digital Communication in the Age of AI",
+//         description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
+//         author: "Mike Rodriguez",
+//         date: "10 May, 2025",
+//         imageUrl: "/hero.svg"
+//     },
+//     {
+//         id: 7,
+//         title: "Future of Digital Communication in the Age of AI",
+//         description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
+//         author: "Mike Rodriguez",
+//         date: "10 May, 2025",
+//         imageUrl: "/hero.svg"
+//     },
+//     {
+//         id: 8,
+//         title: "Future of Digital Communication in the Age of AI",
+//         description: "Innovative approaches to communication are evolving rapidly, with AI playing a crucial role...",
+//         author: "Mike Rodriguez",
+//         date: "10 May, 2025",
+//         imageUrl: "/hero.svg"
+//     },
+// ];
 
 
 const Page = () => {
@@ -109,7 +109,7 @@ const headingRef = useRef(null);
 
     return (
       <div className="min-h-screen bg-dark w-full">
-        {/* <Navbar /> */}
+        <Navbar />
           <div className="flex p-10 text-center md:p-20 md:gap-y-20 gap-y-10 items-center text-white flex-col">
             <h1 
               ref={headingRef}
