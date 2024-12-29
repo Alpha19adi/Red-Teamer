@@ -20,6 +20,16 @@
   cursor: none;
 }
 
+.scrollbar-hide {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+
 /* Multi-color gradient */
 .bg-gradient-multi {
   background-image: linear-gradient(
@@ -54,6 +64,7 @@
   mask: var(--m) content-box exclude, var(--m);
   pointer-events: none;
 }
+
 
 
 .pricing-circle:before {

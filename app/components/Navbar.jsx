@@ -76,7 +76,18 @@ const Navbar = () => {
       }
     }
   };
+  useEffect(() => {
+    // Map routes to their corresponding nav items
+    const routeToNav = {
+      '/': 'Home',
+      '/process': 'Process',
+      '/blogs': 'Blogs'
+    };
 
+    // Get the corresponding nav item for the current pathname
+    const currentNav = routeToNav[pathname] || 'Home';
+    setActiveNav(currentNav);
+  }, [pathname]);
   useEffect(() => {
     if (mobileMenuRef.current) {
       if (isMobileMenuOpen) {

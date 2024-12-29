@@ -14,7 +14,7 @@ const Footer = () => {
             {/* Logo and Company Description */}
             <div className="space-y-6">
               <Link href="/" aria-label="Home">
-                <Logo className="h-8 text-white hover:text-neutral-300 transition-colors duration-200" fillOnHover>
+                <Logo className="h-8 text-white hover:text-neutral-300 transition-colors duration-200">
                   RedTeamer Agency
                 </Logo>
               </Link>
@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="pt-8 border-t border-neutral-800">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-y-6">
               {/* Legal Links */}
-              <div className="flex items-center space-x-6">
+              {/* <div className="flex items-center space-x-6">
                 <Link 
                   href="/privacy" 
                   className="text-sm text-neutral-400 hover:text-white transition-colors duration-200"
@@ -52,7 +52,7 @@ const Footer = () => {
                 >
                   Contact Us
                 </Link>
-              </div>
+              </div> */}
 
               {/* Copyright */}
               <p className="text-sm text-neutral-400">

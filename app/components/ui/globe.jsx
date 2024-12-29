@@ -20,16 +20,16 @@ const GLOBE_CONFIG = {
   markerColor: [0.9,0.2,0.7], // Keep markers as is
   glowColor: [0.6, 0.3, 1], // Light purple glow color
   markers: [
-    { location: [14.5995, 120.9842], size: 0.04 },
-    { location: [19.076, 72.8777], size: 0.2 },
-    { location: [23.8103, 90.4125], size: 0.09 },
-    { location: [30.0444, 31.2357], size: 0.09 },
-    { location: [39.9042, 116.4074], size: 0.11 },
-    { location: [-23.5505, -46.6333], size: 0.14 },
-    { location: [19.4326, -99.1332], size: 0.13 },
-    { location: [40.7128, -74.006], size: 0.17 },
-    { location: [34.6937, 135.5022], size: 0.09 },
-    { location: [41.0082, 28.9784], size: 0.06 },
+    { location: [14.5995, 120.9842], size: 0.0001 },
+    // { location: [19.076, 72.8777], size: 0.2 },
+    // { location: [23.8103, 90.4125], size: 0.09 },
+    // { location: [30.0444, 31.2357], size: 0.09 },
+    // { location: [39.9042, 116.4074], size: 0.11 },
+    // { location: [-23.5505, -46.6333], size: 0.14 },
+    // { location: [19.4326, -99.1332], size: 0.13 },
+    // { location: [40.7128, -74.006], size: 0.17 },
+    // { location: [34.6937, 135.5022], size: 0.09 },
+    // { location: [41.0082, 28.9784], size: 0.06 },
   ],
 };
 

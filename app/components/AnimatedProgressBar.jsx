@@ -76,18 +76,19 @@ const AnimatedProgressBar = () => {
         <div
           key={position}
           className={`
-            absolute top-1/2 transition-all -translate-y-1/2 
-            h-6 w-6 md:h-8 md:w-8 rounded-full 
-            ${progress >= position
-              ? "bg-[#263964fd]"
-              : "bg-[#dfe5f8]"
+      absolute top-1/2 transition-all -translate-y-1/2 
+      h-6 w-6 md:h-8 md:w-8 rounded-full 
+      ${progress >= position
+              ? "bg-[#654ea3]"  
+              : "bg-[#533844]"  
             }
-          `}
+    `}
           style={{
             left: `calc(${position}% - ${position === 100 ? "16px" : "0px"})`,
           }}
         />
       ))}
+
     </div>
   );
 };

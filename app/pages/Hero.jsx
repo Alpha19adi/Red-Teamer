@@ -8,7 +8,7 @@ import SecurityAssessmentPopup from "../components/SecurityAssessmentPopup";
 export default function Hero() {
   return (
     <div id="Home">
-      <div className="bg-gradient-multi min-h-screen flex flex-col darker-grotesque">
+      <div className="bg-gradient-multi min-h-screen flex flex-col darker-grotesque scrollbar-hide">
         <Navbar />
         {/* <HeroSubtitleButton /> */}
         
