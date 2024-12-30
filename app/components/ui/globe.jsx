@@ -11,9 +11,9 @@ const GLOBE_CONFIG = {
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 1,
-  theta: 0.2,
-  dark: 3,
-  diffuse: 0.4,
+  theta: 0.5,
+  dark: 4,
+  diffuse: 0.2,
   mapSamples: 16000,
   mapBrightness: 1.2,
   baseColor: [0.2, 0.1, 0.3], // Purple base color
@@ -53,7 +53,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
 
   const onRender = useCallback(
     (state) => {
-      if (!pointerInteracting.current) phi += 0.004;
+      if (!pointerInteracting.current) phi += 0.01;
       state.phi = phi + r;
       state.width = width * 2;
       state.height = width * 2;

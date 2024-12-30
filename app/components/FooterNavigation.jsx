@@ -1,5 +1,6 @@
 import { navigation } from "../constants/index";
 import Link from "next/link";
+import { FaYoutube, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const FooterNavigation = () => {
   return (
@@ -10,12 +11,13 @@ const FooterNavigation = () => {
             <div className="font-display text-sm font-semibold tracking-wider text-white">
               {item.title}
             </div>
-            <ul role="list" className="mt-4 text-sm text-white ">
+            <ul role="list" className="mt-4 text-sm text-white">
               {item.links.map((link) => (
-                <li key={link.title} className="mt-4">
+                <li key={link.title} className="mt-4 flex items-center">
+                  <IconRenderer title={link.title} />
                   <Link
                     href={link.href}
-                    className="transition-all hover:text-base"
+                    className="ml-2 transition-all hover:text-base"
                   >
                     {link.title}
                   </Link>
@@ -27,6 +29,21 @@ const FooterNavigation = () => {
       </ul>
     </nav>
   );
+};
+
+const IconRenderer = ({ title }) => {
+  switch (title.toLowerCase()) {
+    case "youtube":
+      return <FaYoutube />;
+    case "twitter":
+      return <FaTwitter />;
+    case "facebook":
+      return <FaFacebook />;
+    case "instagram":
+      return <FaInstagram />;
+    default:
+      return null;
+  }
 };
 
 export default FooterNavigation;
