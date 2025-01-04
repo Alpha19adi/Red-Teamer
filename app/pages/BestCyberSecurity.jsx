@@ -37,7 +37,7 @@ const BestCyberSecurity = () => {
           We Offer Best Cyber Security Services
         </h1>
         <p className='text-[#918EA0] text-sm md:text-base leading-relaxed font-medium text-center mt-6 md:mt-10 max-w-[320px] md:max-w-[800px]'>
-          We believe in making today more secure than yesterday. With our resilient cybersecurity programs, you can avert maximum attacks and recover promptly from any that succeeded. Integrate cybersecurity to your organization's very core with our services.
+        4)	We deliver top-tier cybersecurity services, including threat detection, risk management, and compliance solutions, ensuring your business stays secure and resilient against evolving digital threats.
         </p>
       </div>
 

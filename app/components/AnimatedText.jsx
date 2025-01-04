@@ -9,10 +9,9 @@ const AnimatedText = ({ }) => {
   const headingsRef = useRef([]);
 
   const headings= [
-    'Sensitive Data',
-    'Networks',
-    'Compliance',
-    'Vulnerabilities',
+    'Your Data',
+    'Your Privacy',
+    'Your Assets.',
   ]
 
   useEffect(() => {

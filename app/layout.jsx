@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Cursor from "./components/Cursor";
+import CustomCursor from "./components/Cursor";
 
 
 
@@ -27,7 +28,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="hidden md:block">
-        <Cursor />
+        <CustomCursor />
         </div>
         {children}
       </body>

@@ -1,29 +1,18 @@
 "use client"
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [trailingPosition, setTrailingPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
 
-  // Smooth interpolation for trailing effect
-  const lerp = (start, end, factor) => {
-    return start + (end - start) * factor;
-  };
-
-  // Update trailing position with smooth interpolation
-  const updateTrailingPosition = useCallback(() => {
-    setTrailingPosition(prev => ({
-      x: lerp(prev.x, position.x, 0.15), // Adjust this value (0.15) to change trailing speed
-      y: lerp(prev.y, position.y, 0.15)
-    }));
-    requestAnimationFrame(updateTrailingPosition);
-  }, [position]);
-
   useEffect(() => {
     const handleMouseMove = (event) => {
-      setPosition({ x: event.clientX, y: event.clientY });
+      // Using transform3d for better performance
+      const cursor = document.querySelector('.custom-cursor');
+      if (cursor) {
+        cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+      }
     };
 
     const handleMouseDown = () => setIsClicking(true);
@@ -31,9 +20,6 @@ const CustomCursor = () => {
 
     const handleMouseEnter = () => setIsHovering(true);
     const handleMouseLeave = () => setIsHovering(false);
-
-    // Start animation loop
-    const animationFrame = requestAnimationFrame(updateTrailingPosition);
 
     // Add event listeners
     window.addEventListener('mousemove', handleMouseMove);
@@ -48,7 +34,6 @@ const CustomCursor = () => {
     });
 
     return () => {
-      cancelAnimationFrame(animationFrame);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
@@ -57,50 +42,27 @@ const CustomCursor = () => {
         el.removeEventListener('mouseleave', handleMouseLeave);
       });
     };
-  }, [updateTrailingPosition]);
+  }, []);
 
   return (
-    <>
-      {/* Main cursor */}
+    <div
+      className="custom-cursor pointer-events-none fixed left-0 top-0 z-[9999] will-change-transform"
+      style={{
+        transform: `translate3d(${position.x}px, ${position.y}px, 0)`
+      }}
+    >
       <div
-        className="pointer-events-none fixed left-0 top-0 z-[9999]"
+        className="rounded-full bg-white/30 backdrop-blur-sm"
         style={{
-          transform: `translate(${position.x}px, ${position.y}px)`,
-          transition: 'transform 0.1s ease-out'
+          width: isHovering ? '40px' : '20px',
+          height: isHovering ? '40px' : '20px',
+          transform: `translate(-50%, -50%) scale(${isClicking ? 0.8 : 1})`,
+          transition: 'width 0.2s ease-out, height 0.2s ease-out, transform 0.2s ease-out',
+          border: '1px solid rgba(255, 255, 255, 0.4)',
+          boxShadow: '0 0 15px rgba(255, 255, 255, 0.3)'
         }}
-      >
-        <div
-          className="rounded-full bg-white/30 backdrop-blur-sm"
-          style={{
-            width: isHovering ? '40px' : '10px',
-            height: isHovering ? '40px' : '10px',
-            transform: `scale(${isClicking ? 0.8 : 1})`,
-            transition: 'all 0.2s ease-out',
-            border: '1px solid rgba(255, 255, 255, 0.4)',
-            boxShadow: '0 0 15px rgba(255, 255, 255, 0.3)'
-          }}
-        />
-      </div>
-
-      {/* Trailing cursor */}
-      <div
-        className="pointer-events-none fixed left-0 top-0 z-[9998]"
-        style={{
-          transform: `translate(${trailingPosition.x}px, ${trailingPosition.y}px)`,
-        }}
-      >
-        <div
-          className="rounded-full bg-white/10"
-          style={{
-            width: isHovering ? '60px' : '30px',
-            height: isHovering ? '60px' : '30px',
-            transition: 'width 0.2s ease-out, height 0.2s ease-out',
-            backdropFilter: 'blur(4px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)'
-          }}
-        />
-      </div>
-    </>
+      />
+    </div>
   );
 };
 

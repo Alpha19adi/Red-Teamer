@@ -16,14 +16,14 @@ export default function Hero() {
           {/* Text Content */}
           <div className="flex flex-col items-center md:items-center space-y-6 md:max-w-[40%] ">
             <h1 className="text-[40px] text-center md:text-center md:text-[60px] font-bold leading-[55px] md:leading-[72px] text-white">
-              We Protect The World's Most 
+            Protecting What Matters Most
               <span className="elem text-[96px] relative overflow-hidden flex justify-center md:justify-center items-center h-24 sm:h-[105px]">
                 <AnimatedText />
               </span>
             </h1>
             
             <p className="text-[#918EA0] text-lg text-center md:text-center max-w-[450px] ">
-              While any run-of-the-mill IT company will claim to offer you competent IT solutions, as long as it no longer does, we at VAPT Company are globally renowned for our work and believe in offering result-oriented IT facilities.
+            We provide cutting-edge cybersecurity solutions to protect your data, privacy, and business. With advanced threat detection, real-time monitoring, and tailored strategies, we ensure your digital world stays secure. Trust us to safeguard what matters most—your peace of mind in an ever-evolving cyber landscape
             </p>
             
             <div className="w-full flex justify-center md:justify-center md:-ml-10">

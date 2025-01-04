@@ -5,6 +5,7 @@ import Build from "../components/Build";
 import Deliver from "../components/Deliver";
 import Values from "../components/Values";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const ProcessPage = () => {
   return (
@@ -29,6 +30,7 @@ const ProcessPage = () => {
       </div>
       {/* Values */}
       <Values />
+      <Footer/>
     </div>
   );
 };

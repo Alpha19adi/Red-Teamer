@@ -6,6 +6,7 @@ import { CalendarIcon, UserIcon } from 'lucide-react';
 import gsap from 'gsap';
 import Navbar from '../components/Navbar';
 import { blogPosts } from '../constants';
+import Footer from '../components/Footer';
 
 //     {
 //         id: 1,
@@ -165,6 +166,7 @@ const headingRef = useRef(null);
               ))}
             </div>
           </div>
+          <Footer />
         </div>
       );
     };

@@ -4,20 +4,20 @@ import React, { useState } from 'react';
 
 const faqData = [
   {
-    question: "How can I reset my password?",
-    answer: "To reset your password, navigate to the login page and click on the 'Forgot Password' link. You will receive an email with instructions to reset your password. Follow the steps in the email to create a new password and regain access to your account."
+    question: "What is VAPT (Vulnerability Assessment and Penetration Testing)?",
+    answer: "VAPT is a comprehensive security testing process that helps identify vulnerabilities in your IT systems. Vulnerability Assessment scans and identifies potential weaknesses, while Penetration Testing actively tests these vulnerabilities to simulate real-world cyberattacks."
   },
   {
-    question: "How do I update my billing information?",
-    answer: "To update your billing information, go to your account settings and select the 'Billing' or 'Payment Methods' section. Here you can add a new payment method, update your existing credit card, or change your billing address. Make sure to save your changes."
+    question: "What’s the difference between Vulnerability Assessment and Penetration Testing?",
+    answer: "•Vulnerability Assessment scans systems for known vulnerabilities and weaknesses. Penetration Testing simulates a real cyberattack to exploit identified vulnerabilities, testing your defenses under real-world conditions."
   },
   {
-    question: "How can I contact customer support?",
-    answer: "You can contact our customer support team through multiple channels. Visit the 'Contact Us' page on our website, use the live chat feature, send an email to support@example.com, or call our toll-free support number during business hours."
+    question: "How often should we conduct VAPT?",
+    answer: "VAPT should be conducted regularly, at least annually, or whenever you make significant changes to your systems or infrastructure. It’s also recommended after any major software updates, new deployments, or following any cyber incident."
   },
   {
-    question: "How do I delete my account?",
-    answer: "To delete your account, go to account settings, scroll to the bottom of the page, and look for the 'Delete Account' option. You may be asked to confirm your identity and provide a reason for deletion. Please note that account deletion is usually permanent and cannot be undone."
+    question: "What happens after the VAPT report is delivered?",
+    answer: "After the assessment, we provide a detailed report outlining the vulnerabilities found, the risk they pose, and practical recommendations for remediation. Our experts can also assist in fixing the identified issues and improving your security measures."
   }
 ];
 

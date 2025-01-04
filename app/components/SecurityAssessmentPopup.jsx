@@ -84,7 +84,7 @@ const SecurityAssessmentPopup = () => {
         onClick={() => setIsOpen(true)}
         className="hero-button-gradient rounded-lg py-3 px-7 text-white font-medium ease-in duration-300 hover:opacity-80"
       >
-        Start Your Free Security Assessment
+        Start Your Free Security Evaluation Today
       </button>
 
       {isOpen && (
