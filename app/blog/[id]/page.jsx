@@ -2,6 +2,8 @@ import { CalendarIcon, UserIcon } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react'
 import { blogPosts } from '../../constants/index';
+import Navbar from "../../components/Navbar"
+import Footer from '../../components/Footer';
 
 const Page = async ({ params }) => {
 
@@ -30,7 +32,8 @@ const Page = async ({ params }) => {
   };
 
   return (
-    <div className='w-full bg-dark min-h-screen flex items-center'>
+    <div className='w-full bg-dark min-h-screen flex-col flex items-center'>
+      <Navbar />
       <div className="container mx-auto px-4 pt-2 py-12 max-w-6xl bg-dark">
         <article className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
           {/* Hero Image */}
@@ -70,6 +73,7 @@ const Page = async ({ params }) => {
           </div>
         </article>
       </div>
+      <Footer />
     </div>
   );
 };
