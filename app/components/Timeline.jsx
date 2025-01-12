@@ -101,8 +101,8 @@ const AnimatedProgressBar = () => {
 
 export default function Timeline({ props }) {
   return (
-    <div className="bg-[#030014] text-white w-full min-h-screen px-2 sm:px-4 py-10 sm:py-20 md:p-20 flex flex-col items-center">
-      <h1 className="text-white font-bold text-xl sm:text-2xl md:text-4xl text-center pb-6 sm:pb-10 md:pb-20">
+    <div className="bg-[#030014] text-white w-full min-h-screen px-2 sm:px-4 pb-10 sm:py-20 md:p-20 flex flex-col items-center">
+      <h1 className="text-white font-bold text-xl sm:text-2xl md:text-4xl text-center pb-20 sm:pb-10 md:pb-20">
         The TimeLine
       </h1>
       <div className="w-full max-w-[1288px] relative">

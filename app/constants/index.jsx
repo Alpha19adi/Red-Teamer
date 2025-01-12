@@ -24,11 +24,11 @@ export const navigation = [
 export const blogPosts = [
   {
     id: 1,
-    title: "Revolution in Content Creation and Communication",
-    description: "Second, when you have become capable of watching and witnessing your body and its activities, then you can take the second step: watch the activities of your mind – thoughts, dreams, imagination.\n\nJust remain a witness, as if you are standing by the side of the road and a procession of thoughts is passing on the road. You are not part of it.\n\nYou are just a mirror reflecting, without any judgement – because the mirror has no judgement.",
+    title: "Everything about CSP (Content Security Policy) and bypassing it like a PRO!!",
+    description: "What is CSP? 🤔 \n\n Content Security Policy (CSP) is a security feature implemented by modern web browsers to prevent various types of attacks, including Cross-Site Scripting (XSS), data injection attacks, and other code injection vulnerabilities. \n\n CSP works by allowing website administrators to specify which sources of content are permitted to be loaded and executed by the web page. This restricts the ability of attackers to inject malicious content, such as scripts or iframes, that could compromise the security of a website. \n\n How Does CSP Work? \n\n Implementation of CSP is conducted through HTTP response headers or in a <meta> tag in the HTML.These directives specify which types of resources are allowed to load on the page, such as scripts, styles, images, fonts, and other resources.\n\n Let’s talk about the technicals……🧐 \n\n ",
     author: "Alex Demo",
     date: "25 Mar, 2025",
-    imageUrl: "/hero.svg"
+    imageUrl: "/blogimg1.jpg"
   },
   {
       id: 2,

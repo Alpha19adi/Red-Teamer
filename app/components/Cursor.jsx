@@ -5,13 +5,27 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
+    // Check if we're on desktop
+    const checkDevice = () => {
+      setIsDesktop(window.innerWidth >= 1024); // 1024px is the standard lg breakpoint
+    };
+
+    // Initial check
+    checkDevice();
+
+    // Add resize listener
+    window.addEventListener('resize', checkDevice);
+
     const handleMouseMove = (event) => {
-      // Using transform3d for better performance
-      const cursor = document.querySelector('.custom-cursor');
-      if (cursor) {
-        cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+      // Only update cursor if on desktop
+      if (isDesktop) {
+        const cursor = document.querySelector('.custom-cursor');
+        if (cursor) {
+          cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+        }
       }
     };
 
@@ -21,32 +35,42 @@ const CustomCursor = () => {
     const handleMouseEnter = () => setIsHovering(true);
     const handleMouseLeave = () => setIsHovering(false);
 
-    // Add event listeners
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
+    // Only add event listeners if on desktop
+    if (isDesktop) {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mousedown', handleMouseDown);
+      window.addEventListener('mouseup', handleMouseUp);
 
-    // Add hover detection for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, input, .hover-target');
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', handleMouseEnter);
-      el.addEventListener('mouseleave', handleMouseLeave);
-    });
+      const interactiveElements = document.querySelectorAll('a, button, input, .hover-target');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', handleMouseEnter);
+        el.addEventListener('mouseleave', handleMouseLeave);
+      });
+    }
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
-      interactiveElements.forEach(el => {
-        el.removeEventListener('mouseenter', handleMouseEnter);
-        el.removeEventListener('mouseleave', handleMouseLeave);
-      });
+      window.removeEventListener('resize', checkDevice);
+      
+      if (isDesktop) {
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mousedown', handleMouseDown);
+        window.removeEventListener('mouseup', handleMouseUp);
+        
+        const interactiveElements = document.querySelectorAll('a, button, input, .hover-target');
+        interactiveElements.forEach(el => {
+          el.removeEventListener('mouseenter', handleMouseEnter);
+          el.removeEventListener('mouseleave', handleMouseLeave);
+        });
+      }
     };
-  }, []);
+  }, [isDesktop]); // Add isDesktop to dependency array
+
+  // Don't render anything if not on desktop
+  if (!isDesktop) return null;
 
   return (
     <div
-      className="custom-cursor pointer-events-none fixed left-0 top-0 z-[9999] will-change-transform"
+      className="custom-cursor pointer-events-none fixed left-0 top-0 z-[9999] will-change-transform hidden lg:block"
       style={{
         transform: `translate3d(${position.x}px, ${position.y}px, 0)`
       }}

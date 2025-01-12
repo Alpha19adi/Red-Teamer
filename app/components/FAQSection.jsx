@@ -16,6 +16,14 @@ const faqData = [
     answer: "VAPT should be conducted regularly, at least annually, or whenever you make significant changes to your systems or infrastructure. It’s also recommended after any major software updates, new deployments, or following any cyber incident."
   },
   {
+    question: "How often should we conduct VAPT?",
+    answer: "VAPT should be conducted regularly, at least annually, or whenever you make significant changes to your systems or infrastructure. It’s also recommended after any major software updates, new deployments, or following any cyber incident."
+  },
+  {
+    question: "How often should we conduct VAPT?",
+    answer: "VAPT should be conducted regularly, at least annually, or whenever you make significant changes to your systems or infrastructure. It’s also recommended after any major software updates, new deployments, or following any cyber incident."
+  },
+  {
     question: "What happens after the VAPT report is delivered?",
     answer: "After the assessment, we provide a detailed report outlining the vulnerabilities found, the risk they pose, and practical recommendations for remediation. Our experts can also assist in fixing the identified issues and improving your security measures."
   }
