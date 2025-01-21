@@ -5,7 +5,7 @@ import Blockquote from "./Blockquote";
 
 const Build = () => {
   return (
-    <Section title="Build" image={{ src: "", shape: 2 }}>
+    <Section title="Build" image={{ src: "/processImg2.png", shape: 2, width: 200, height: 200}}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           Based off of the discovery phase, we develop a comprehensive roadmap

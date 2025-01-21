@@ -14,22 +14,22 @@ export default function Home() {
     "heading": "We deliver all passkey functions out-of-the-box as per FIDO2 standard",
     "card": [
       {
-        "src":"/timeline1.svg",
+        "src":"/timeline3.png",
         "heading": "Intelligence Gathering",
         "description": "Quickly integrate passkes into your apps with SDKs & APIs"
       },
       {
-        "src":"/timeline1.svg",
+        "src":"/timeline2.png",
         "heading": "Threat Modeling",
         "description": "Progressively onboard users with customizable flows"
       },
       {
-        "src":"/timeline1.svg",
+        "src":"/timeline4.png",
         "heading": "Penetration Testing",
         "description": "Allow users to create and manage passkeys"
       },
       {
-        "src":"/timeline1.svg",
+        "src":"/timeline5.png",
         "heading": "Reporting Timely",
         "description": "Send passkey related alerts via SMS and email."
       }

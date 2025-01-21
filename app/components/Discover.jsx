@@ -5,7 +5,7 @@ import { TagList, TagListItem } from "./TagList";
 
 const Discover = () => {
   return (
-    <Section title="Discover" image={{ src: "", shape: 1 }}>
+    <Section title="Discover" image={{ src: "/processImg1.png", shape: 1, width: 200, height: 200 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           We work closely with our clients to understand their{" "}
@@ -14,7 +14,7 @@ const Discover = () => {
           what makes their business tick.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
+          Our team of private investigators shadow the company director's for
           several weeks while our account managers focus on going through their
           trash. Our senior security experts then perform social engineering
           hacks to gain access to their{" "}

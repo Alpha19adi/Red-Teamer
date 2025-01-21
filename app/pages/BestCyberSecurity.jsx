@@ -4,22 +4,22 @@ import { gsap } from 'gsap';
 
 const cyberSecurity = [
     {
-        src: "/cyberDiv.png",
+        src: "/cyberDiv1.png",
         title: 'Web Penetration Testing',
         description: "Identifies vulnerabilities in web applications to enhance security defenses.",
     },
     {
-        src: "/cyberDiv.png",
+        src: "/cyberDiv2.png",
         title: 'Mobile Penetration Testing',
         description: "Assesses mobile apps (Android/IOS) for security flaws and potential exploitation risks.",
     },
     {
-        src: "/cyberDiv.png",
+        src: "/cyberDiv3.png",
         title: 'Container Security Assessment',
         description: "Evaluates container vulnerabilities to ensure secure application deployment environments.",
     },
     {
-        src: "/cyberDiv.png",
+        src: "/cyberDiv4.png",
         title: 'Active Directory Penetration Testing',
         description: "Identifies AD weaknesses to prevent unauthorized access and privilege escalation.",
     },

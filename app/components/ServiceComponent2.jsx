@@ -15,7 +15,7 @@ const ServiceComponent2 = () => {
             subColor: "#6067E5",
             bg:`radial-gradient(circle, hsla(0, 0%, 2%, 1) 0%, hsla(238, 42%, 30%, 1) 70%)`,
             image:{
-              src:'/cardImg1.png',
+              src:'/cyberDiv6.png',
               alt:'card stack sub Img',
               height:560,
               width:474,
@@ -31,7 +31,7 @@ const ServiceComponent2 = () => {
             subColor: "#45DAA0",
             bg:`radial-gradient(circle, hsla(0, 0%, 2%, 1) 0%, hsla(238, 42%, 30%, 1) 70%)`,
             image:{
-              src:'/Logo.png',
+              src:'/cardImg5.png',
               alt:'card stack sub Img',
               height:560,
               width:474,
@@ -47,7 +47,7 @@ const ServiceComponent2 = () => {
             subColor: "#9C65DE",
             bg:`radial-gradient(circle, hsla(0, 0%, 2%, 1) 0%, hsla(238, 42%, 30%, 1) 70%)`,
             image:{
-              src:'/Logo.png',
+              src:'/cardImg6.png',
               alt:'card stack sub Img',
               height:560,
               width:474,
