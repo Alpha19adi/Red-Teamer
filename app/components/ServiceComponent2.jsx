@@ -15,7 +15,7 @@ const ServiceComponent2 = () => {
             subColor: "#6067E5",
             bg:`radial-gradient(circle, hsla(0, 0%, 2%, 1) 0%, hsla(238, 42%, 30%, 1) 70%)`,
             image:{
-              src:'/cyberDiv6.png',
+              src:'/cardImg8.png',
               alt:'card stack sub Img',
               height:560,
               width:474,

@@ -2,9 +2,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
-// import cardVerticalBar from '@/../public/whiteSeperator.svg';
 import Image from 'next/image';
-// import HoverButton105 from "../general/Buttons/HoverButton105";
 import Link from "next/link";
 
 export const CardStack = ({
@@ -94,13 +92,13 @@ export const CardStack = ({
               }}
             >
               <div className="flex flex-col items-center sm:flex-row text-white text-opacity-70 gap-x-[80px] ">
-                <div className=" sm:order-last flex flex-shrink-0 w-[560px]">
+                <div className=" sm:order-last flex flex-shrink-0 w-[400px]">
                   <Image
                     src={card.image.src}
                     alt={card.image.alt}
-                    height={card.image.height}
-                    width={card.image.width}
-                    className="flex flex-shrink-0 w-full"
+                    height={300}
+                    width={300}
+                    className="flex flex-shrink-0 w-full object-contain"
                   />
                 </div>
                 <div className="flex flex-col sm:w-2/3 items-center ">
@@ -116,7 +114,6 @@ export const CardStack = ({
           );
         })}
       </div>
-
 
       {/* Render as a carousel for mobile */}
       <div className="block sm:hidden">
@@ -135,9 +132,9 @@ export const CardStack = ({
               <Image
                 src={cards[currentIndex].image.src}
                 alt={cards[currentIndex].image.alt}
-                height={cards[currentIndex].image.height}
-                width={cards[currentIndex].image.width}
-                className="flex flex-shrink-0 w-full"
+                height={250}
+                width={250}
+                className="flex flex-shrink-0 w-full object-contain"
               />
 
               {/* Card content */}
