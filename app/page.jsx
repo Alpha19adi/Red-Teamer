@@ -10,7 +10,7 @@ import Cursor from "./components/Cursor";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const FIDOCard = {
+  const TimeCard = {
     "heading": "We deliver all passkey functions out-of-the-box as per FIDO2 standard",
     "card": [
       {
@@ -42,7 +42,7 @@ export default function Home() {
       <BestCyberSecurity />
       <Services />
       <Services2 />
-      <Timeline props={FIDOCard}/>
+      <Timeline props={TimeCard}/>
       <LatestBlogs />
       <FAQSection  />
       <Footer/>

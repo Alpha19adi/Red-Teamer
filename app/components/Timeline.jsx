@@ -1,13 +1,10 @@
 "use client"
-
 import React, { useState, useEffect } from "react";
-
 const TimelineItem = ({ props, index }) => {
   const isEven = index % 2 === 0;
   
   return (
     <div className="flex w-full justify-center items-center relative">
-      {/* Content Container - Now responsive at all breakpoints */}
       <div className="flex w-full justify-center items-center gap-4 md:gap-8">
         {/* Text Section */}
         <div className={`w-1/2 ${isEven ? 'text-right pr-4 md:pr-8' : 'text-left pl-4 md:pl-8'} 
@@ -17,14 +14,13 @@ const TimelineItem = ({ props, index }) => {
           {/* Mobile-only description for better readability */}
           <p className="text-gray-400 text-xs sm:hidden">{props.description}</p>
         </div>
-
         {/* Center Spacer for Progress Bar */}
         <div className="w-8 md:w-16 order-2 flex-shrink-0"></div>
 
         {/* Image Section */}
         <div className={`w-1/2 ${isEven ? 'pl-4 md:pl-8' : 'pr-4 md:pr-8'} 
           ${isEven ? 'order-3 flex justify-start' : 'order-1 flex justify-end'}`}>
-          <div className="w-20 h-20 sm:w-32 sm:h-32 md:w-48 md:h-48">
+          <div className="w-16 h-16 sm:w-28 sm:h-28 md:w-44 md:h-44">
             <img 
               src={props.src} 
               alt={props.heading} 

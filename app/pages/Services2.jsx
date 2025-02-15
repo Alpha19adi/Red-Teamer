@@ -3,7 +3,7 @@ import ServiceComponent2 from '../components/ServiceComponent2'
 
 const Services2 = () => {
   return (
-    <div className='bg-[#030014] md:h-[485vh]'>
+    <div className='bg-[#030014] md:h-[325vh]'>
         <ServiceComponent2 />
     </div>
   )

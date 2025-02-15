@@ -63,10 +63,14 @@ export default function CardAnimation({ props }) {
       scrollTriggerRef.current.kill();
     }
 
+    // In your ScrollTrigger setup, modify the end value
     scrollTriggerRef.current = ScrollTrigger.create({
       trigger: container,
       start: "top -7%",
-      end: `+=${props.data.length * window.innerHeight}`,
+      // Reduce the scroll distance by using a fraction of the window height
+      end: `+=${props.data.length * window.innerHeight * 0.4}`, // Reduced to 50% of original
+      // Or use a fixed pixel value
+      // end: `+=${props.data.length * 400}`, // Use 400px per section
       pin: true,
       scrub: 1,
       snapTo: 1 / (props.data.length - 1),
@@ -101,16 +105,16 @@ export default function CardAnimation({ props }) {
           </div>
         </div>
         <div className="mb-20  md:mb-8 lg:mt-[48px]">
-          <CardTab 
-            setActiveTabInd={handleTabChange} 
-            activeTab={activeTab} 
+          <CardTab
+            setActiveTabInd={handleTabChange}
+            activeTab={activeTab}
           />
         </div>
         <div ref={cardStackRef} className="flex justify-center max-md:mx-4">
-          <CardStack 
-            items={props.data} 
-            activeTab={activeTab} 
-            prevTab={prevTab} 
+          <CardStack
+            items={props.data}
+            activeTab={activeTab}
+            prevTab={prevTab}
           />
         </div>
       </div>

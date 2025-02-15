@@ -17,8 +17,6 @@ const Navbar = () => {
   const handleNavClick = (item) => {
     setActiveNav(item);
     setIsMobileMenuOpen(false);
-
-    // Special cases for direct page navigation
     if (item === "Blogs") {
       router.push('/blogs');
       return;
@@ -27,11 +25,8 @@ const Navbar = () => {
       router.push('/process');
       return;
     }
-
-    // If we're not on the landing page and trying to navigate to a section
     if (pathname !== '/' && ['Home', 'Features', 'Services'].includes(item)) {
       router.push('/');
-      // We need to wait for the navigation to complete before scrolling
       setTimeout(() => {
         const section = document.getElementById(item);
         if (section) {
@@ -41,17 +36,15 @@ const Navbar = () => {
             Features: offset,
             Services: offset + 100,
           };
-          
+
           window.scrollTo({
             top: customOffset[item],
             behavior: "smooth",
           });
         }
-      }, 100); // Small delay to ensure the page has loaded
+      }, 100); 
       return;
     }
-
-    // If we're already on the landing page
     if (pathname === '/') {
       if (item === 'Home') {
         window.scrollTo({
@@ -77,14 +70,13 @@ const Navbar = () => {
     }
   };
   useEffect(() => {
-    // Map routes to their corresponding nav items
     const routeToNav = {
       '/': 'Home',
       '/process': 'Process',
       '/blogs': 'Blogs'
     };
 
-    // Get the corresponding nav item for the current pathname
+
     const currentNav = routeToNav[pathname] || 'Home';
     setActiveNav(currentNav);
   }, [pathname]);
@@ -112,13 +104,12 @@ const Navbar = () => {
   return (
     <nav className="w-full text-white px-4 py-2 ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <div className="relative w-[350px] h-[90px] left-2">
+        <div className="relative w-[370px] h-[94px] left-2 logo-container">
           <Image
             src="/Logo.png"
             alt="Logo"
             fill
-            className="object-contain "
+            className="object-contain logo"
             priority
             onClick={() => handleNavClick("Home")}
           />
@@ -129,9 +120,8 @@ const Navbar = () => {
           {navData.map((item) => (
             <button
               key={item}
-              className={`relative text-gray-300 text-sm md:text-md py-1.5 px-4 border font-medium border-transparent   ${
-                activeNav === item ? "nav-gradient hover:underline" : ""
-              }`}
+              className={`relative text-gray-300 text-sm md:text-md py-1.5 px-4 border font-medium border-transparent   ${activeNav === item ? "nav-gradient hover:underline" : ""
+                }`}
               onClick={() => handleNavClick(item)}
             >
               {item}
@@ -162,9 +152,8 @@ const Navbar = () => {
           {navData.map((item) => (
             <button
               key={item}
-              className={`text-white text-lg py-3 px-6 text-left hover:bg-gray-800 w-full ${
-                activeNav === item ? "bg-gray-700" : ""
-              }`}
+              className={`text-white text-lg py-3 px-6 text-left hover:bg-gray-800 w-full ${activeNav === item ? "bg-gray-700" : ""
+                }`}
               onClick={() => handleNavClick(item)}
             >
               {item}
